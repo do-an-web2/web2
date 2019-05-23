@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/quocthinhlk/web2/issues"
   },
-  "homepage": "https://github.com/quocthinhlk/web2#readme"
+  "homepage": "https://github.com/quocthinhlk/web2#readme",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
 }
