@@ -1,19 +1,20 @@
 var mysql      = require('mysql');
-var db_config = {
+var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : 'root',
-    database : 'qlbh',
-    port     : 8889
-    }
-var connection = mysql.createConnection(db_config);
+    database : 'qlbh'
+});
+
 connection.connect();
 var sql = 'SELECT 1 + 1 AS solution';
-var fn = () => {
-    console.log('Hàm xử lý kết quả truy vấn');
-}
 
-connection.query(sql,fn);
-console.log('After querying...');
-
-connection.end();
+connection.query(sql, function (error, results, fields) {
+    if (error){
+        console.log(error);
+    }else{
+        console.log('The solution is: ', results);
+    }
+    connection.end();
+});
+console.log("Apter querying...");
